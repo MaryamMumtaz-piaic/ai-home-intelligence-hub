@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Tasks — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+  <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">Tasks</p>
+      <h1 class="font-display text-3xl sm:text-4xl">Your improvement roadmap</h1>
+    </div>
+    <button id="add-task-open" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-sm font-medium hover:bg-olive">+ Add Task</button>
+  </div>
+
+  <div class="flex gap-2 mb-8" role="tablist">
+    <button class="view-tab px-4 py-2 rounded-full text-sm font-medium border border-taupe bg-charcoal text-ivory" data-view="roadmap">Roadmap</button>
+    <button class="view-tab px-4 py-2 rounded-full text-sm font-medium border border-taupe" data-view="list">List</button>
+  </div>
+
+  <div id="tasks-empty" class="hidden text-center py-24 border border-dashed border-taupe rounded-2xl">
+    <p class="font-display text-xl mb-2">No tasks yet.</p>
+    <p class="text-charcoal/60 mb-6">Save a recommendation or create a task to begin your improvement roadmap.</p>
+  </div>
+
+  <div id="roadmap-view" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+  <div id="list-view" class="hidden space-y-2"></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/tasks.js"></script>{% endblock %}

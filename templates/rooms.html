@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Rooms — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+  <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">Rooms</p>
+      <h1 class="font-display text-3xl sm:text-4xl">Your rooms</h1>
+    </div>
+    <button id="add-room-open" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-sm font-medium hover:bg-olive">+ Add Room</button>
+  </div>
+
+  <div id="rooms-empty" class="hidden text-center py-24 border border-dashed border-taupe rounded-2xl">
+    <p class="font-display text-xl mb-2">Your home model is empty.</p>
+    <p class="text-charcoal/60 mb-6">Add your first room to begin building your digital home.</p>
+    <button id="add-room-open-empty" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-sm font-medium hover:bg-olive">+ Add Room</button>
+  </div>
+
+  <div id="rooms-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/rooms.js"></script>{% endblock %}

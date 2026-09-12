@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Contact — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+  <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">Contact</p>
+  <h1 class="font-display text-3xl sm:text-4xl mb-8">Get in touch</h1>
+
+  <div id="contact-success" class="hidden bg-olive/10 border border-olive/40 text-olive text-sm rounded-lg px-4 py-3 mb-6">Message received.</div>
+
+  <form id="contact-form" class="space-y-5" novalidate>
+    <label class="block"><span class="text-sm font-medium">Name</span>
+      <input required name="name" class="mt-1.5 w-full border border-taupe rounded-lg px-3 py-2.5">
+      <span class="field-error text-xs text-terracotta hidden"></span>
+    </label>
+    <label class="block"><span class="text-sm font-medium">Email</span>
+      <input required type="email" name="email" class="mt-1.5 w-full border border-taupe rounded-lg px-3 py-2.5">
+      <span class="field-error text-xs text-terracotta hidden"></span>
+    </label>
+    <label class="block"><span class="text-sm font-medium">Subject</span>
+      <input required name="subject" class="mt-1.5 w-full border border-taupe rounded-lg px-3 py-2.5">
+      <span class="field-error text-xs text-terracotta hidden"></span>
+    </label>
+    <label class="block"><span class="text-sm font-medium">Message</span>
+      <textarea required name="message" rows="5" class="mt-1.5 w-full border border-taupe rounded-lg px-3 py-2.5"></textarea>
+      <span class="field-error text-xs text-terracotta hidden"></span>
+    </label>
+    <button type="submit" class="bg-charcoal text-ivory px-6 py-3 rounded-full text-sm font-medium hover:bg-olive">Send Message</button>
+  </form>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  let valid = true;
+  form.querySelectorAll("[required]").forEach((el) => {
+    const errorEl = el.closest("label").querySelector(".field-error");
+    if (!el.value.trim() || (el.type === "email" && !/^\S+@\S+\.\S+$/.test(el.value))) {
+      errorEl.textContent = el.type === "email" ? "Enter a valid email address." : "This field is required.";
+      errorEl.classList.remove("hidden");
+      valid = false;
+    } else {
+      errorEl.classList.add("hidden");
+    }
+  });
+  if (!valid) return;
+  const data = Object.fromEntries(new FormData(form).entries());
+  try {
+    await HomeHub.apiPost("/api/contact", data);
+    document.getElementById("contact-success").classList.remove("hidden");
+    form.reset();
+    HomeHub.showToast("Message received.", "success");
+  } catch (err) {
+    HomeHub.showToast(err.message, "error");
+  }
+});
+</script>
+{% endblock %}

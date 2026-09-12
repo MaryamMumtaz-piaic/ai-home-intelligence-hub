@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}FAQ — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-3xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+  <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">FAQ</p>
+  <h1 class="font-display text-3xl sm:text-4xl mb-8">Frequently asked questions</h1>
+
+  <div class="divide-y divide-taupe/50 border-t border-b border-taupe/50">
+    {% set faqs = [
+      ("How does the home analysis work?", "You build a digital profile of your home, then a set of specialized AI agents analyze different aspects (space, energy, maintenance, comfort, safety, accessibility) and an orchestrator combines their findings into one report."),
+      ("Do I need exact room measurements?", "No — approximate measurements are fine. More precise dimensions produce more useful space-planning suggestions, but the app works with estimates."),
+      ("Can I add multiple floors?", "Yes. Each room records a floor level, and your home profile records a total floor count."),
+      ("Can I edit my home later?", "Yes. Rooms, furniture, appliances, and your home profile can all be edited or removed at any time from the Rooms and My Home pages."),
+      ("Are energy savings guaranteed?", "No. Energy suggestions are potential opportunities based on the information you provide, always labeled as estimates, never guarantees."),
+      ("Can the AI assess structural safety?", "No. Structural, electrical, gas, and similar concerns require a qualified professional — the app will flag when that's the case."),
+      ("Can I save recommendations?", "Yes. Every recommendation can be saved, completed, dismissed, or converted into a task."),
+      ("Can I track maintenance?", "Yes, from the home setup flow and from your Insights maintenance plan — items include category, condition, and status."),
+      ("Is my home data stored permanently?", "Your data is stored locally in your browser and on this server's local files — there is no cloud account or sync."),
+      ("Can I print my home report?", "Yes — the Insights and Tasks pages include a Print action using your browser's native print feature."),
+    ] %}
+    {% for q, a in faqs %}
+    <details class="py-5 group">
+      <summary class="flex items-center justify-between cursor-pointer font-medium list-none">
+        {{ q }}
+        <span class="text-charcoal/40 group-open:rotate-45 transition-transform">+</span>
+      </summary>
+      <p class="text-sm text-charcoal/70 mt-3 leading-relaxed">{{ a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

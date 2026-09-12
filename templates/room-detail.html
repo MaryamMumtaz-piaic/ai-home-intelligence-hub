@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Room Detail — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-5xl mx-auto px-5 sm:px-8 py-10 sm:py-14" data-room-id="{{ room_id }}">
+  <a href="/rooms" class="text-sm text-charcoal/60 hover:text-charcoal">← All rooms</a>
+
+  <div id="room-loading" class="py-24 text-center text-charcoal/50">Loading room…</div>
+
+  <div id="room-content" class="hidden mt-4">
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+      <div>
+        <p id="room-type-label" class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1"></p>
+        <h1 id="room-name" class="font-display text-3xl sm:text-4xl"></h1>
+        <p id="room-dims" class="text-sm text-charcoal/60 mt-2"></p>
+      </div>
+      <div class="flex gap-3">
+        <button id="compare-scenario-btn" class="border border-taupe px-4 py-2.5 rounded-full text-sm font-medium hover:border-charcoal/50">Compare Scenario</button>
+        <button id="analyze-room-btn" class="bg-olive text-ivory px-4 py-2.5 rounded-full text-sm font-medium hover:bg-forest">Analyze Room</button>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mb-10">
+      <div class="lg:col-span-2 border border-taupe/60 rounded-2xl p-5 sm:p-6">
+        <h2 class="font-semibold mb-3">Digital Room Preview</h2>
+        <svg id="room-svg" width="100%" height="220" viewBox="0 0 400 220" class="bg-stone/30 rounded-lg border border-taupe/40"></svg>
+      </div>
+      <div class="border border-taupe/60 rounded-2xl p-5 sm:p-6">
+        <h2 class="font-semibold mb-3">Details</h2>
+        <dl id="room-details" class="space-y-2 text-sm"></dl>
+      </div>
+    </div>
+
+    <div id="ai-observations" class="hidden border border-taupe/60 rounded-2xl p-5 sm:p-6 mb-10">
+      <h2 class="font-semibold mb-2">AI Observations</h2>
+      <p id="ai-observations-text" class="text-sm text-charcoal/70 leading-relaxed"></p>
+      <div id="ai-room-recs" class="grid sm:grid-cols-2 gap-4 mt-4"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <section>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="font-semibold">Furniture</h2>
+          <button id="add-furniture-open" class="text-sm text-olive hover:underline">+ Add</button>
+        </div>
+        <div id="furniture-items" class="space-y-2"></div>
+      </section>
+      <section>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="font-semibold">Appliances</h2>
+          <button id="add-appliance-open" class="text-sm text-olive hover:underline">+ Add</button>
+        </div>
+        <div id="appliance-items" class="space-y-2"></div>
+      </section>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/room-detail.js"></script>{% endblock %}

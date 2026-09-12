@@ -1,0 +1,15 @@
+[
+  {"value": "refrigerator", "label": "Refrigerator", "typical_watts": [100, 400]},
+  {"value": "air_conditioner", "label": "Air Conditioner", "typical_watts": [900, 3500]},
+  {"value": "fan", "label": "Fan", "typical_watts": [30, 100]},
+  {"value": "washing_machine", "label": "Washing Machine", "typical_watts": [400, 1200]},
+  {"value": "dryer", "label": "Dryer", "typical_watts": [1800, 3000]},
+  {"value": "water_heater", "label": "Water Heater", "typical_watts": [1500, 4500]},
+  {"value": "oven", "label": "Oven", "typical_watts": [1000, 2400]},
+  {"value": "microwave", "label": "Microwave", "typical_watts": [600, 1200]},
+  {"value": "television", "label": "Television", "typical_watts": [30, 200]},
+  {"value": "computer", "label": "Computer", "typical_watts": [60, 300]},
+  {"value": "lighting", "label": "Lighting", "typical_watts": [5, 100]},
+  {"value": "water_pump", "label": "Water Pump", "typical_watts": [250, 1100]},
+  {"value": "other", "label": "Other", "typical_watts": [10, 2000]}
+]

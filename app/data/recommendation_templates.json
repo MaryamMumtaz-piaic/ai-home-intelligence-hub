@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Improve living room circulation",
+    "category": "space",
+    "priority": "medium",
+    "why_it_matters": "The current furniture arrangement may reduce clear movement space.",
+    "recommended_action": "Consider repositioning the coffee table and sofa.",
+    "expected_benefit": "Potentially clearer movement and easier cleaning.",
+    "effort": "low",
+    "estimated_cost": {"type": "none", "min": 0, "max": 0, "currency": "USD", "is_estimate": true},
+    "confidence": "medium",
+    "assumptions": ["Furniture can be moved."],
+    "requires_professional_assessment": false
+  }
+]

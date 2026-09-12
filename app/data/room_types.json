@@ -1,0 +1,17 @@
+[
+  {"value": "living_room", "label": "Living Room", "description": "Shared relaxation and gathering space."},
+  {"value": "bedroom", "label": "Bedroom", "description": "Private rest and sleep space."},
+  {"value": "kitchen", "label": "Kitchen", "description": "Food preparation and cooking space."},
+  {"value": "bathroom", "label": "Bathroom", "description": "Hygiene and washing space."},
+  {"value": "dining_room", "label": "Dining Room", "description": "Space for meals and gathering."},
+  {"value": "home_office", "label": "Home Office", "description": "Dedicated work-from-home space."},
+  {"value": "study", "label": "Study", "description": "Quiet reading or study space."},
+  {"value": "balcony", "label": "Balcony", "description": "Outdoor-adjacent space attached to a room."},
+  {"value": "hallway", "label": "Hallway", "description": "Circulation space connecting rooms."},
+  {"value": "storage_room", "label": "Storage Room", "description": "Dedicated storage space."},
+  {"value": "laundry_room", "label": "Laundry Room", "description": "Washing and drying space."},
+  {"value": "guest_room", "label": "Guest Room", "description": "Space reserved for visitors."},
+  {"value": "kids_room", "label": "Kids Room", "description": "Space for children."},
+  {"value": "outdoor_area", "label": "Outdoor Area", "description": "Yard, garden, or patio space."},
+  {"value": "other", "label": "Other", "description": "Any other room type."}
+]

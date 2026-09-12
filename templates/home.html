@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}My Home — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+
+<div class="max-w-5xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+
+  <div id="loading-state" class="py-24 text-center text-charcoal/50">Loading your home…</div>
+
+  <!-- DASHBOARD (shown once a home profile exists) -->
+  <section id="dashboard-view" class="hidden">
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">My Home</p>
+        <h1 id="dashboard-home-name" class="font-display text-3xl sm:text-4xl"></h1>
+        <p id="dashboard-home-meta" class="text-sm text-charcoal/60 mt-2"></p>
+      </div>
+      <div class="flex gap-3">
+        <button id="edit-profile-btn" class="border border-taupe px-4 py-2.5 rounded-full text-sm font-medium hover:border-charcoal/50">Edit Profile</button>
+        <a href="/insights" class="bg-olive text-ivory px-4 py-2.5 rounded-full text-sm font-medium hover:bg-forest">Analyze Home</a>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mb-10">
+      <div class="lg:col-span-2 blueprint-frame border border-taupe/60 rounded-2xl p-5 sm:p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-semibold">Digital Home Model</h2>
+          <div class="flex gap-2 text-xs">
+            <button id="floorplan-zoom-in" class="w-7 h-7 rounded border border-taupe hover:bg-stone" aria-label="Zoom in">+</button>
+            <button id="floorplan-zoom-out" class="w-7 h-7 rounded border border-taupe hover:bg-stone" aria-label="Zoom out">−</button>
+            <button id="floorplan-reset" class="px-2 h-7 rounded border border-taupe hover:bg-stone">Reset</button>
+          </div>
+        </div>
+        <div id="floorplan-container" class="overflow-auto border border-taupe/40 rounded-lg bg-stone/30" style="min-height:320px">
+          <svg id="floorplan-svg" width="100%" height="320" viewBox="0 0 600 400"></svg>
+        </div>
+        <p class="text-xs text-charcoal/50 mt-3">A simplified representation based on the room dimensions you entered — not an architectural drawing.</p>
+      </div>
+      <div class="border border-taupe/60 rounded-2xl p-5 sm:p-6">
+        <h2 class="font-semibold mb-4">Overview</h2>
+        <dl id="dashboard-stats" class="space-y-3 text-sm"></dl>
+        <a href="/rooms" class="mt-5 inline-flex text-sm font-medium text-olive hover:underline">Manage rooms →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP WIZARD (shown when no home exists yet) -->
+  <section id="wizard-view" class="hidden">
+    <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-2">Build My Home</p>
+    <h1 class="font-display text-3xl sm:text-4xl mb-8">Let's model your home, step by step.</h1>
+
+    <ol id="wizard-progress" class="flex flex-wrap gap-x-5 gap-y-2 mb-10 text-xs font-mono"></ol>
+
+    <form id="wizard-form" class="bg-white/40 border border-taupe/60 rounded-2xl p-6 sm:p-8">
+      <div id="wizard-step-content"></div>
+      <div class="flex items-center justify-between mt-8 pt-6 border-t border-taupe/50">
+        <button type="button" id="wizard-back" class="text-sm font-medium text-charcoal/60 hover:text-charcoal disabled:opacity-30">← Back</button>
+        <button type="button" id="wizard-next" class="bg-charcoal text-ivory px-6 py-3 rounded-full text-sm font-medium hover:bg-olive">Continue</button>
+      </div>
+    </form>
+  </section>
+
+</div>
+
+{% endblock %}
+{% block scripts %}<script src="/static/js/home.js"></script>{% endblock %}

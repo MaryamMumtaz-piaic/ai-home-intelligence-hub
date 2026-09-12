@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block title %}AI Home Intelligence Hub — Understand your home, intelligently{% endblock %}
+{% block content %}
+
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pt-16 sm:pt-24 pb-20 grid lg:grid-cols-12 gap-10 items-center">
+  <div class="lg:col-span-7">
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-olive mb-5">Digital Home Planner · AI Space Advisor · Maintenance Assistant</p>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+      Your home, <em class="not-italic text-olive">understood</em> intelligently.
+    </h1>
+    <p class="mt-6 text-lg text-charcoal/75 max-w-xl leading-relaxed">
+      Build a digital model of your home and receive practical recommendations for space, comfort,
+      energy, maintenance, security, and everyday living — explained, not just generated.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="/home" class="inline-flex items-center gap-2 bg-charcoal text-ivory px-6 py-3.5 rounded-full font-medium hover:bg-olive transition-colors">
+        Build My Home
+      </a>
+      <a href="/insights" class="inline-flex items-center gap-2 border border-charcoal/20 px-6 py-3.5 rounded-full font-medium hover:border-charcoal/50 transition-colors">
+        Explore Intelligence
+      </a>
+    </div>
+  </div>
+
+  <div class="lg:col-span-5">
+    <div class="blueprint-frame bg-stone/70 rounded-2xl p-6 sm:p-8">
+      <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-4">Home Intelligence Preview</p>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between bg-ivory rounded-lg px-4 py-3">
+          <span class="text-sm font-medium">Space Planning</span>
+          <span class="text-sm font-mono text-olive">78</span>
+        </div>
+        <div class="flex items-center justify-between bg-ivory rounded-lg px-4 py-3">
+          <span class="text-sm font-medium">Energy</span>
+          <span class="text-sm font-mono text-amber">61</span>
+        </div>
+        <div class="flex items-center justify-between bg-ivory rounded-lg px-4 py-3">
+          <span class="text-sm font-medium">Maintenance</span>
+          <span class="text-sm font-mono text-terracotta">44</span>
+        </div>
+        <div class="flex items-center justify-between bg-ivory rounded-lg px-4 py-3">
+          <span class="text-sm font-medium">Safety Awareness</span>
+          <span class="text-sm font-mono text-olive">85</span>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-charcoal/50">AI-generated planning indicators, illustrative — your real report is built from your data.</p>
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-taupe/50 bg-stone/40 py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-8">How it works</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% set steps = [
+        ("01", "Model your home", "Add rooms, dimensions, furniture, and appliances to build a digital profile."),
+        ("02", "Tell us how you live", "Share lifestyle, energy, maintenance, and safety information at your own pace."),
+        ("03", "Run the analysis", "A team of specialized AI agents reviews space, energy, comfort, and more."),
+        ("04", "Act on your report", "Explore recommendations, compare scenarios, and track improvements as tasks."),
+      ] %}
+      {% for num, title, desc in steps %}
+      <div>
+        <p class="font-display text-2xl text-olive/70 mb-3">{{ num }}</p>
+        <h3 class="font-semibold mb-2">{{ title }}</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+  <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-3">Core capabilities</p>
+  <h2 class="font-display text-3xl sm:text-4xl max-w-2xl mb-12">Ten specialized agents, one coherent report.</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% set caps = [
+      ("Space Planning", "Circulation, crowding, and furniture placement analysis."),
+      ("Organization", "Storage opportunities and decluttering sequences."),
+      ("Energy Insight", "Behavioral and appliance-usage opportunities."),
+      ("Maintenance", "Overdue and upcoming maintenance scheduling."),
+      ("Comfort", "Lighting, layout, and ventilation improvements."),
+      ("Safety Awareness", "General, non-invasive safety guidance."),
+      ("Accessibility", "Clear-path and layout accessibility suggestions."),
+      ("Improvement Planning", "Quick wins through larger projects, sequenced."),
+      ("Cost & Priority", "Impact, effort, and cost-aware prioritization."),
+    ] %}
+    {% for title, desc in caps %}
+    <div class="border border-taupe/60 rounded-xl p-6 hover:border-olive/60 transition-colors">
+      <h3 class="font-semibold mb-2">{{ title }}</h3>
+      <p class="text-sm text-charcoal/70 leading-relaxed">{{ desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="bg-charcoal text-ivory py-20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wider text-sage mb-3">Room intelligence</p>
+      <h2 class="font-display text-3xl mb-4">See your floor plan, not just a form.</h2>
+      <p class="text-ivory/70 leading-relaxed max-w-md">Your rooms become a simplified, interactive digital model — built from the dimensions and furniture you enter, with priority rooms highlighted.</p>
+    </div>
+    <div class="bg-ivory/5 border border-ivory/15 rounded-2xl p-6">
+      <svg viewBox="0 0 320 200" class="w-full h-auto">
+        <rect x="10" y="10" width="140" height="90" fill="none" stroke="#A3B18A" stroke-width="1.5"/>
+        <text x="18" y="26" fill="#A3B18A" font-size="10" font-family="IBM Plex Mono">Living Room</text>
+        <rect x="160" y="10" width="150" height="90" fill="none" stroke="#C1694F" stroke-width="1.5"/>
+        <text x="168" y="26" fill="#C1694F" font-size="10" font-family="IBM Plex Mono">Bedroom · priority</text>
+        <rect x="10" y="110" width="90" height="80" fill="none" stroke="#6C8EA6" stroke-width="1.5"/>
+        <text x="18" y="126" fill="#6C8EA6" font-size="10" font-family="IBM Plex Mono">Kitchen</text>
+        <rect x="110" y="110" width="200" height="80" fill="none" stroke="#C98A3A" stroke-width="1.5"/>
+        <text x="118" y="126" fill="#C98A3A" font-size="10" font-family="IBM Plex Mono">Dining + Office</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-20 grid lg:grid-cols-2 gap-12">
+  <div>
+    <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-3">Energy &amp; maintenance</p>
+    <h2 class="font-display text-3xl mb-4">Estimates, clearly labeled as estimates.</h2>
+    <p class="text-charcoal/70 leading-relaxed mb-6">We never claim guaranteed savings. Every energy and maintenance suggestion is based on what you tell us, with clear language like "potential" and "estimated," and a note when a professional should verify.</p>
+    <ul class="space-y-2 text-sm text-charcoal/80">
+      <li class="flex gap-2"><span class="text-olive">✓</span> User-provided data vs. AI estimate, always distinguished</li>
+      <li class="flex gap-2"><span class="text-olive">✓</span> Overdue maintenance flagged by category</li>
+      <li class="flex gap-2"><span class="text-olive">✓</span> Professional-assessment flags on sensitive items</li>
+    </ul>
+  </div>
+  <div>
+    <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-3">Recommendation preview</p>
+    <div class="blueprint-frame border border-taupe/60 rounded-xl p-6">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-xs font-mono uppercase bg-amber/15 text-amber px-2 py-1 rounded">Medium priority</span>
+        <span class="text-xs text-charcoal/50">Energy</span>
+      </div>
+      <h3 class="font-semibold mb-2">Review peak-hour appliance usage</h3>
+      <p class="text-sm text-charcoal/70 mb-3">Running high-draw appliances during reported peak periods may increase costs. Consider shifting laundry and dishwasher cycles to off-peak hours.</p>
+      <p class="text-xs text-charcoal/50">Estimated opportunity · requires measurement to confirm</p>
+    </div>
+  </div>
+</section>
+
+<section class="border-t border-taupe/50 bg-stone/40 py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid sm:grid-cols-3 gap-8 text-sm">
+    <div>
+      <h3 class="font-semibold mb-2">Explainable, not opaque</h3>
+      <p class="text-charcoal/70 leading-relaxed">Every recommendation states why it matters, what to do, and how confident the system is.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2">Your data, your device</h3>
+      <p class="text-charcoal/70 leading-relaxed">Home data is stored in your browser and, for optional submissions, as local server records — no cloud sync claims.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2">Built for real decisions</h3>
+      <p class="text-charcoal/70 leading-relaxed">Save recommendations as tasks, compare what-if scenarios, and track a real improvement roadmap.</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-5 sm:px-8 py-24 text-center">
+  <h2 class="font-display text-3xl sm:text-4xl mb-5">Start with one room. Improve the whole home.</h2>
+  <p class="text-charcoal/70 mb-8 max-w-xl mx-auto">No login required. Your home profile lives locally and is ready whenever you are.</p>
+  <a href="/home" class="inline-flex items-center gap-2 bg-charcoal text-ivory px-7 py-4 rounded-full font-medium hover:bg-olive transition-colors">
+    Build My Home
+  </a>
+</section>
+
+{% endblock %}

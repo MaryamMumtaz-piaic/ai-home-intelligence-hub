@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}AI Home Intelligence Hub{% endblock %}</title>
+<meta name="description" content="{% block description %}Build a digital model of your home and receive practical, explainable recommendations for space, comfort, energy, maintenance, security, and everyday living.{% endblock %}">
+<meta property="og:title" content="AI Home Intelligence Hub">
+<meta property="og:description" content="Understand your home. Improve every space.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ivory: '#FAF7F2',
+          stone: '#EDE7DD',
+          taupe: '#C9BEB0',
+          charcoal: '#2B2620',
+          olive: '#6B7654',
+          sage: '#A3B18A',
+          terracotta: '#C1694F',
+          amber: '#C98A3A',
+          dusty: '#6C8EA6',
+          forest: '#3E5C4A',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-ivory text-charcoal font-sans antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-charcoal focus:text-ivory focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+
+<header id="site-header" class="sticky top-0 z-40 bg-ivory/90 backdrop-blur border-b border-taupe/0 transition-shadow" data-scrolled-class="shadow-sm border-taupe/60">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="/" class="flex items-center gap-2 group">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="27" height="27" rx="3" stroke="#6B7654" stroke-width="1.5"/>
+        <path d="M8 16.5L15 10L22 16.5" stroke="#C1694F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.5 15V21.5H19.5V15" stroke="#2B2620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="font-display text-lg tracking-tight">Home Intelligence Hub</span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal/80">
+      <li><a href="/" class="nav-link hover:text-charcoal {% if page == 'home' %}text-charcoal is-active{% endif %}">Home</a></li>
+      <li><a href="/home" class="nav-link hover:text-charcoal {% if page == 'my-home' %}text-charcoal is-active{% endif %}">My Home</a></li>
+      <li><a href="/rooms" class="nav-link hover:text-charcoal {% if page == 'rooms' %}text-charcoal is-active{% endif %}">Rooms</a></li>
+      <li><a href="/insights" class="nav-link hover:text-charcoal {% if page == 'insights' %}text-charcoal is-active{% endif %}">Insights</a></li>
+      <li><a href="/recommendations" class="nav-link hover:text-charcoal {% if page == 'recommendations' %}text-charcoal is-active{% endif %}">Recommendations</a></li>
+      <li><a href="/tasks" class="nav-link hover:text-charcoal {% if page == 'tasks' %}text-charcoal is-active{% endif %}">Tasks</a></li>
+      <li><a href="/about" class="nav-link hover:text-charcoal {% if page == 'about' %}text-charcoal is-active{% endif %}">About</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="/insights" class="hidden sm:inline-flex items-center gap-2 bg-olive text-ivory text-sm font-medium px-4 py-2 rounded-full hover:bg-forest transition-colors">
+        Analyze Home
+      </a>
+      <button id="mobile-menu-btn" class="lg:hidden p-2 -mr-2 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-olive" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="#2B2620" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-taupe/60 bg-ivory">
+    <ul class="px-5 py-4 space-y-1 text-base">
+      <li><a href="/" class="block py-2.5">Home</a></li>
+      <li><a href="/home" class="block py-2.5">My Home</a></li>
+      <li><a href="/rooms" class="block py-2.5">Rooms</a></li>
+      <li><a href="/insights" class="block py-2.5">Insights</a></li>
+      <li><a href="/recommendations" class="block py-2.5">Recommendations</a></li>
+      <li><a href="/tasks" class="block py-2.5">Tasks</a></li>
+      <li><a href="/settings" class="block py-2.5">Settings</a></li>
+      <li><a href="/about" class="block py-2.5">About</a></li>
+      <li><a href="/faq" class="block py-2.5">FAQ</a></li>
+      <li><a href="/contact" class="block py-2.5">Contact</a></li>
+      <li class="pt-2"><a href="/insights" class="inline-flex items-center gap-2 bg-olive text-ivory text-sm font-medium px-4 py-2.5 rounded-full">Analyze Home</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="border-t border-taupe/60 bg-stone/60 mt-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="lg:col-span-2">
+      <p class="font-display text-xl">AI Home Intelligence Hub</p>
+      <p class="mt-3 text-sm text-charcoal/70 max-w-xs">Understand your home. Improve every space.</p>
+    </div>
+    <div>
+      <p class="text-xs font-mono uppercase tracking-wider text-charcoal/50 mb-3">Product</p>
+      <ul class="space-y-2 text-sm text-charcoal/80">
+        <li><a href="/home" class="hover:text-charcoal">Home</a></li>
+        <li><a href="/rooms" class="hover:text-charcoal">Rooms</a></li>
+        <li><a href="/insights" class="hover:text-charcoal">Insights</a></li>
+        <li><a href="/recommendations" class="hover:text-charcoal">Recommendations</a></li>
+        <li><a href="/tasks" class="hover:text-charcoal">Tasks</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xs font-mono uppercase tracking-wider text-charcoal/50 mb-3">AI Tools</p>
+      <ul class="space-y-2 text-sm text-charcoal/80">
+        <li><a href="/insights" class="hover:text-charcoal">Analyze Home</a></li>
+        <li><a href="/rooms" class="hover:text-charcoal">Room Intelligence</a></li>
+        <li><a href="/rooms" class="hover:text-charcoal">Scenario Comparison</a></li>
+        <li><a href="/insights" class="hover:text-charcoal">Maintenance Planner</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xs font-mono uppercase tracking-wider text-charcoal/50 mb-3">Company</p>
+      <ul class="space-y-2 text-sm text-charcoal/80">
+        <li><a href="/about" class="hover:text-charcoal">About</a></li>
+        <li><a href="/faq" class="hover:text-charcoal">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-charcoal">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-taupe/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row gap-3 justify-between text-xs text-charcoal/60">
+      <p>&copy; 2026 AI Home Intelligence Hub. AI recommendations are informational, not professional assessments.</p>
+      <div class="flex gap-4">
+        <a href="/about#limitations" class="hover:text-charcoal">AI limitations</a>
+        <a href="/about#privacy" class="hover:text-charcoal">Privacy</a>
+        <a href="/about#safety" class="hover:text-charcoal">Safety guidance</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 items-end" aria-live="polite" aria-atomic="true"></div>
+
+<div id="modal-root"></div>
+
+<script src="/static/js/main.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

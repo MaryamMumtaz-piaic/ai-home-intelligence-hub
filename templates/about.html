@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}About — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-3xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+  <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">About</p>
+  <h1 class="font-display text-3xl sm:text-4xl mb-8">A digital twin for how you actually live.</h1>
+
+  <div class="prose-like space-y-8 text-charcoal/80 leading-relaxed">
+    <section>
+      <h2 class="font-display text-xl text-charcoal mb-2">What it does</h2>
+      <p>AI Home Intelligence Hub helps you build a digital model of your home — rooms, furniture, appliances, lifestyle, energy, maintenance, and safety information — and turns it into explainable, room-by-room recommendations.</p>
+    </section>
+    <section>
+      <h2 class="font-display text-xl text-charcoal mb-2">How the digital home model works</h2>
+      <p>Each room you add is rendered as a simplified, proportionally scaled floor-plan block based on the dimensions you provide. It is not an architectural drawing — it's a planning aid built entirely from your own data.</p>
+    </section>
+    <section>
+      <h2 class="font-display text-xl text-charcoal mb-2">How recommendations are generated</h2>
+      <p>A set of specialized AI agents (space planning, organization, energy, maintenance, comfort, safety, accessibility) each analyze their slice of your home profile. An orchestrator merges, deduplicates, and prioritizes their output into one coherent report.</p>
+    </section>
+    <section>
+      <h2 class="font-display text-xl text-charcoal mb-2">Why your data matters</h2>
+      <p>The more complete your profile, the more specific and useful the recommendations. Missing information is always disclosed, never silently assumed.</p>
+    </section>
+    <section id="limitations">
+      <h2 class="font-display text-xl text-charcoal mb-2">What the AI can and cannot determine</h2>
+      <p>Recommendations are informational planning suggestions, not measurements or guarantees. Energy figures are estimates, not utility-grade calculations. Structural, electrical, gas, and major construction work always requires a qualified professional — the app will flag these explicitly.</p>
+    </section>
+    <section id="privacy">
+      <h2 class="font-display text-xl text-charcoal mb-2">Privacy</h2>
+      <p>There is no login. Your home profile is stored locally in your browser session and, for the parts that need to persist across visits, as local server records on this machine — not synced to any cloud service.</p>
+    </section>
+    <section id="safety">
+      <h2 class="font-display text-xl text-charcoal mb-2">Safety guidance</h2>
+      <p>The safety-awareness feature provides general guidance only. It is not a professional security assessment or emergency service, and it never asks for passwords, access codes, or surveillance credentials.</p>
+    </section>
+  </div>
+</div>
+{% endblock %}

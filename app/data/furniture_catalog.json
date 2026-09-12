@@ -1,0 +1,16 @@
+[
+  {"value": "sofa", "label": "Sofa", "typical_width_cm": [160, 240], "typical_depth_cm": [80, 100]},
+  {"value": "bed", "label": "Bed", "typical_width_cm": [90, 200], "typical_depth_cm": [190, 210]},
+  {"value": "desk", "label": "Desk", "typical_width_cm": [100, 160], "typical_depth_cm": [55, 80]},
+  {"value": "chair", "label": "Chair", "typical_width_cm": [40, 70], "typical_depth_cm": [40, 70]},
+  {"value": "dining_table", "label": "Dining Table", "typical_width_cm": [120, 220], "typical_depth_cm": [75, 110]},
+  {"value": "wardrobe", "label": "Wardrobe", "typical_width_cm": [80, 200], "typical_depth_cm": [55, 65]},
+  {"value": "cabinet", "label": "Cabinet", "typical_width_cm": [60, 160], "typical_depth_cm": [35, 50]},
+  {"value": "bookshelf", "label": "Bookshelf", "typical_width_cm": [60, 120], "typical_depth_cm": [25, 35]},
+  {"value": "tv_unit", "label": "TV Unit", "typical_width_cm": [100, 200], "typical_depth_cm": [30, 45]},
+  {"value": "coffee_table", "label": "Coffee Table", "typical_width_cm": [60, 130], "typical_depth_cm": [50, 70]},
+  {"value": "storage_box", "label": "Storage Box", "typical_width_cm": [30, 80], "typical_depth_cm": [30, 50]},
+  {"value": "dresser", "label": "Dresser", "typical_width_cm": [80, 140], "typical_depth_cm": [40, 55]},
+  {"value": "kitchen_unit", "label": "Kitchen Unit", "typical_width_cm": [60, 300], "typical_depth_cm": [55, 65]},
+  {"value": "other", "label": "Other", "typical_width_cm": [30, 200], "typical_depth_cm": [30, 200]}
+]

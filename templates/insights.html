@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Insights — AI Home Intelligence Hub{% endblock %}
+{% block content %}
+<div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
+
+  <div id="insights-intro" class="text-center py-10">
+    <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-2">Home Intelligence Report</p>
+    <h1 class="font-display text-3xl sm:text-4xl mb-4">See what your home is telling you.</h1>
+    <p class="text-charcoal/60 max-w-lg mx-auto mb-8">A team of specialized AI agents reviews your space, energy, maintenance, comfort, safety, and accessibility — and explains every conclusion.</p>
+    <button id="analyze-btn" class="bg-charcoal text-ivory px-7 py-3.5 rounded-full font-medium hover:bg-olive">Analyze My Home</button>
+    <p id="insights-no-home" class="hidden text-sm text-terracotta mt-4">You need a home profile first. <a href="/home" class="underline">Set one up →</a></p>
+  </div>
+
+  <div id="progress-view" class="hidden max-w-md mx-auto py-16">
+    <ol id="progress-steps" class="space-y-4"></ol>
+  </div>
+
+  <div id="error-view" class="hidden text-center py-16">
+    <p class="text-terracotta mb-4"></p>
+    <button id="retry-btn" class="border border-taupe px-5 py-2.5 rounded-full text-sm font-medium hover:border-charcoal/50">Retry</button>
+  </div>
+
+  <div id="report-view" class="hidden">
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-wider text-charcoal/50 mb-1">Report for</p>
+        <h1 id="report-home-name" class="font-display text-3xl sm:text-4xl"></h1>
+        <p id="report-meta" class="text-sm text-charcoal/60 mt-2"></p>
+      </div>
+      <div class="flex gap-3 no-print">
+        <button id="print-report" class="border border-taupe px-4 py-2.5 rounded-full text-sm font-medium hover:border-charcoal/50">Print</button>
+        <button id="reanalyze-btn" class="bg-olive text-ivory px-4 py-2.5 rounded-full text-sm font-medium hover:bg-forest">Re-analyze</button>
+      </div>
+    </div>
+
+    <div id="partial-notice" class="hidden bg-amber/10 border border-amber/40 text-amber-900 text-sm rounded-lg px-4 py-3 mb-6"></div>
+
+    <div id="category-scores" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10"></div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mb-10">
+      <div class="border border-taupe/60 rounded-2xl p-5">
+        <h2 class="font-semibold mb-3">Top Actions</h2>
+        <ul id="top-actions" class="space-y-2 text-sm"></ul>
+      </div>
+      <div class="border border-taupe/60 rounded-2xl p-5">
+        <h2 class="font-semibold mb-3">Quick Wins</h2>
+        <ul id="quick-wins" class="space-y-2 text-sm"></ul>
+      </div>
+      <div class="border border-taupe/60 rounded-2xl p-5">
+        <h2 class="font-semibold mb-3">Missing Information</h2>
+        <ul id="missing-info" class="space-y-2 text-sm text-charcoal/60"></ul>
+      </div>
+    </div>
+
+    <h2 class="font-display text-2xl mb-4">Room by room</h2>
+    <div id="room-summaries" class="grid sm:grid-cols-2 gap-5 mb-4"></div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/insights.js"></script>{% endblock %}

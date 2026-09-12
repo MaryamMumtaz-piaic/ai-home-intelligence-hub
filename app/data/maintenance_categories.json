@@ -1,0 +1,15 @@
+[
+  {"value": "electrical", "label": "Electrical", "suggested_check_interval_months": 12},
+  {"value": "plumbing", "label": "Plumbing", "suggested_check_interval_months": 12},
+  {"value": "hvac", "label": "HVAC", "suggested_check_interval_months": 6},
+  {"value": "roof", "label": "Roof", "suggested_check_interval_months": 12},
+  {"value": "walls_and_paint", "label": "Walls and Paint", "suggested_check_interval_months": 24},
+  {"value": "windows_and_doors", "label": "Windows and Doors", "suggested_check_interval_months": 12},
+  {"value": "appliances", "label": "Appliances", "suggested_check_interval_months": 6},
+  {"value": "pest_control", "label": "Pest Control", "suggested_check_interval_months": 6},
+  {"value": "water_systems", "label": "Water Systems", "suggested_check_interval_months": 12},
+  {"value": "safety_equipment", "label": "Safety Equipment", "suggested_check_interval_months": 6},
+  {"value": "furniture", "label": "Furniture", "suggested_check_interval_months": 12},
+  {"value": "outdoor_areas", "label": "Outdoor Areas", "suggested_check_interval_months": 6},
+  {"value": "other", "label": "Other", "suggested_check_interval_months": 12}
+]
