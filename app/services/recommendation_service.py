@@ -1,7 +1,13 @@
+import logging
+
+from pydantic import ValidationError
+
 from app.models.recommendation import Recommendation
 from app.services.json_store import read_collection, write_collection
 from app.utils.dates import now_iso
 from app.utils.ids import new_id
+
+logger = logging.getLogger("ai_home_hub.recommendations")
 
 COLLECTION = "recommendations"
 
@@ -38,13 +44,20 @@ def save_generated(home_id: str, recommendation_dicts: list[dict]) -> list[dict]
         key = (home_id, rec.get("room_id"), rec.get("title"))
         if key in existing_keys:
             continue
-        record = Recommendation(
-            id=new_id("rec"),
-            home_id=home_id,
-            created_at=now,
-            updated_at=now,
-            **rec,
-        ).model_dump()
+        try:
+            record = Recommendation(
+                id=new_id("rec"),
+                home_id=home_id,
+                created_at=now,
+                updated_at=now,
+                **rec,
+            ).model_dump()
+        except ValidationError:
+            # Defense in depth: agents should already sanitize their output via
+            # normalize_recommendations, but a malformed record must never take down
+            # the whole analysis request — skip it and keep the rest of the report.
+            logger.warning("recommendations.save_generated.invalid_record_skipped")
+            continue
         existing.append(record)
         existing_keys.add(key)
         created.append(record)
